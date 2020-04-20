@@ -28,4 +28,9 @@ class db:
         for i in self.dataList:
             if i["id"] == id:
                 return i
-    
+    def changeCurrentTime(self,id,time):
+        loc = self.searchDb(int(id))
+        print(loc)
+        loc["currentWaitTime"] = int(time)
+        self.updateToFile()
+        return loc
