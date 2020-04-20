@@ -20,7 +20,7 @@ def getPollingPlace(id):
 
 @app.route('/db')
 def wholeboi():
-    return str(data.toJSON())
+    return str(data.toJSON()).replace("'","\"")
 @app.route('/db/query/<id>')
 def queryPollingLocation(id):
     return data.searchDb(id)
@@ -35,7 +35,7 @@ def addToDb(id, name):
     return newDict
 @app.route('/users')
 def users():
-    return str(userData.toJSON())
+    return str(userData.toJSON()).replace("'","\"")
 @app.route('/users/register/<id>/<pw>/<maxTime>/<location>', methods=['POST'])
 def register(id,pw,maxTime,location):
     thing = {"id": id, "password": pw, "maxtime": maxTime, "location": location}

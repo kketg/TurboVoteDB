@@ -26,6 +26,6 @@ class db:
     def searchDb(self, id):
         self.updateFromFile()
         for i in self.dataList:
-            if i.id == id:
+            if i["id"] == id:
                 return i
     
