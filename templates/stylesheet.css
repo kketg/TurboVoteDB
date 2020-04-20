@@ -1,0 +1,14 @@
+#list{
+    float:left;
+    width:30;
+    background-color: grey;
+    padding: 20px;
+
+}
+
+#content{
+    float:left;
+    background-color: white;
+    width:70%;
+    
+}
