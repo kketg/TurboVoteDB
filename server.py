@@ -21,6 +21,13 @@ def getPollingPlace(id):
 @app.route('/db')
 def wholeboi():
     return str(data.toJSON())
+@app.route('/db/query/<id>')
+def queryPollingLocation(id):
+    return data.searchDb(id)
+@app.route('/db/query/time/<id>')
+def queryWaitTime(id):
+    dic = data.searchDb(id)
+    return dic["currentWaitTime"]
 @app.route('/db/append/<id>/<name>', methods=['POST'])
 def addToDb(id, name):
     newDict = {"id": id, "name": name}
@@ -34,6 +41,8 @@ def register(id,pw,maxTime,location):
     thing = {"id": id, "password": pw, "maxtime": maxTime, "location": location}
     userData.addToDb(thing)
     return thing
+
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=9090)

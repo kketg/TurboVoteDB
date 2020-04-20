@@ -23,5 +23,9 @@ class db:
     def addToDb(self, newDict):
         self.dataList.append(newDict)
         self.updateToFile()
-        
+    def searchDb(self, id):
+        self.updateFromFile()
+        for i in self.dataList:
+            if i.id == id:
+                return i
     
