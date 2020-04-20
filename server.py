@@ -24,7 +24,7 @@ def wholeboi():
 @app.route('/db/query/<id>')
 def queryPollingLocation(id):
     return str(data.searchDb(int(id))).replace("'","\"")
-    @app.route('/db/query/name/<id>')
+@app.route('/db/query/name/<id>')
 def queryWaitTime(id):
     dic = data.searchDb(int(id))
     name = dic["name"]
