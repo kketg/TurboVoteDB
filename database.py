@@ -26,7 +26,7 @@ class db:
     def searchDb(self, id):
         self.updateFromFile()
         for i in self.dataList:
-            if i["id"] == id:
+            if i["id"] == int(id):
                 return i
     def changeCurrentTime(self,id,time):
         loc = self.searchDb(int(id))
