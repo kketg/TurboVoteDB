@@ -21,7 +21,7 @@ def getPollingPlace(id):
 @app.route('/db')
 def wholeboi():
     return str(data.toJSON()).replace("'","\"")
-@app.route('/db/query/<id>')
+@app.route('/db/query/location/<id>')
 def queryPollingLocation(id):
     return str(data.searchDb(int(id))).replace("'","\"")
 @app.route('/db/query/name/<id>')
